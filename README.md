@@ -1,20 +1,22 @@
-# Face Detection
+# Face Detection - CenterFace + OpenCV
 
-Project ini merupakan aplikasi deteksi wajah pada gambar menggunakan Python dengan bantuan **OpenCV**, **DeepFace**, dan **CenterFace**.
+Project ini merupakan aplikasi deteksi wajah pada gambar menggunakan **CenterFace** dan **OpenCV**.
+
+Aplikasi menerima sebuah foto sebagai input, kemudian model CenterFace digunakan untuk mendeteksi wajah. Hasil deteksi ditampilkan menggunakan bounding box pada wajah yang ditemukan.
 
 ## Deskripsi
 
-Aplikasi ini digunakan untuk mendeteksi wajah pada sebuah foto. Foto dibaca menggunakan OpenCV, kemudian DeepFace digunakan untuk menjalankan proses deteksi dengan **CenterFace** sebagai detector backend.
+Face Detection merupakan proses untuk menemukan lokasi wajah manusia pada sebuah gambar.
 
-Wajah yang berhasil terdeteksi akan diberikan **bounding box** atau kotak pada area wajah.
+Pada project ini, **CenterFace** digunakan sebagai algoritma deteksi wajah, sedangkan **OpenCV** digunakan untuk membaca gambar, menjalankan model ONNX, melakukan pemrosesan gambar, dan menampilkan hasil deteksi.
 
 ## Teknologi yang Digunakan
 
 - Python
 - OpenCV
-- DeepFace
+- NumPy
 - CenterFace
-- TensorFlow
+- ONNX
 
 ## Alur Sistem
 
@@ -23,12 +25,54 @@ Input Foto
     ↓
 OpenCV
     ↓
-DeepFace
+Preprocessing
     ↓
 CenterFace
+    ↓
+Post-processing
     ↓
 Deteksi Wajah
     ↓
 Bounding Box
     ↓
 Output Foto
+
+Struktur Project
+
+face_detection/
+├── app.py
+├── images/
+│   └── images2.jpg
+├── models/
+│   └── centerface.onnx
+├── README.md
+├── requirements.txt
+├── .gitignore
+└── venv/
+
+
+Instalasi
+git clone https://github.com/widyalifya/Face-Detection.git
+
+Masuk ke folder project
+cd Face-Detection
+
+2. Membuat Virtual Environment
+python -m venv venv
+
+3. Install Library
+pip install -r requirements.txt
+
+
+Menyiapkan Model
+Model CenterFace ONNX disimpan di dalam folder:
+
+models/centerface.onnx
+
+Menyiapkan Foto
+Letakkan foto yang ingin digunakan di folder:
+
+images/
+
+Menjalankan Program
+python app.py
