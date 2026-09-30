@@ -51,8 +51,7 @@ face_detection/
 └── venv/
 
 
-Instalasi
-git clone https://github.com/widyalifya/Face-Detection.git
+
 
 Masuk ke folder project
 cd Face-Detection
